@@ -33,6 +33,7 @@ var alphaArray = [
 var numericArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var specialArray = [
+  " ",  
   "!",
   '"',
   "#",
@@ -92,25 +93,21 @@ function generatePassword() {
   if (lowercase) {
     characterChoiceArray.push("lowercase");
   }
-  console.log(characterChoiceArray);
 
   var uppercase = confirm("Would you like to include uppercase characters?");
   if (uppercase) {
     characterChoiceArray.push("uppercase");
   }
-  console.log(characterChoiceArray);
 
   var numeric = confirm("Would you like to include numeric characters?");
   if (numeric) {
     characterChoiceArray.push("numeric");
   }
-  console.log(characterChoiceArray);
 
   var special = confirm("Would you like to include special characters?");
   if (special) {
     characterChoiceArray.push("special");
   }
-  console.log(characterChoiceArray);
 
   if (!lowercase && !uppercase && !numeric && !special) {
     alert("You must include at least one type of character!");
@@ -137,7 +134,6 @@ function generatePassword() {
   }
 
   password = passwordArray.join("");
-  console.log(password);
 
   return password;
 }
