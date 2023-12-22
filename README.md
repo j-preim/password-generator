@@ -6,7 +6,7 @@ The purpose of this project is to create a custom password generator that will g
 
 ## Installation
 
-N/A
+The project can be found at the following GitHub Page: https://j-preim.github.io/password-generator/
 
 ## Usage
 
