@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//Establish global variables
 var alphaArray = [
   "A",
   "B",
@@ -33,7 +34,7 @@ var alphaArray = [
 var numericArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var specialArray = [
-  " ",  
+  " ",
   "!",
   '"',
   "#",
@@ -68,11 +69,13 @@ var specialArray = [
   "~",
 ];
 
+//Function to generate random numbers
 function random(min, max) {
   const num = Math.floor(Math.random() * (max - min + 1)) + min;
   return num;
 }
 
+//Function to generate random password
 function generatePassword() {
   var password = "Try again!";
 
@@ -80,6 +83,7 @@ function generatePassword() {
     "Please enter the desired length of the password (between 8 and 128 characters)"
   );
 
+  //Store the password length chosen by the user, if entered
   if (passwordLength == null) {
     return password;
   } else if (passwordLength < 8 || passwordLength > 128) {
@@ -89,6 +93,7 @@ function generatePassword() {
 
   var characterChoiceArray = [];
 
+  //Store the character type(s) chosen by the user, if any selected
   var lowercase = confirm("Would you like to include lowercase characters?");
   if (lowercase) {
     characterChoiceArray.push("lowercase");
@@ -116,6 +121,8 @@ function generatePassword() {
 
   var passwordArray = [];
 
+  //Loop through each password character, first establishing a random character type from those allowed, 
+  //then choosing a random character from the character arrays above
   for (var i = 0; i < passwordLength; i++) {
     var characterType =
       characterChoiceArray[random(0, characterChoiceArray.length - 1)];
